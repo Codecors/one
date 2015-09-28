@@ -1,11 +1,17 @@
 // UMD dance - https://github.com/umdjs/umd
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
-  } else {
-    factory(root.jQuery);
-  }
-})(this, function($) {
+(function (factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node/CommonJS
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
     'use strict';
 
 
@@ -15,8 +21,8 @@
      * @constructor
      * @ignore
      */
-    var JquerySidenav = function JquerySidenav (element, options) {
-        this.$el     = $(element);
+    var SideNav = function SideNav(element, options) {
+        this.$el = $(element);
         this.options = options;
 
         this.init();
@@ -24,22 +30,22 @@
     };
 
     /** @access private */
-    JquerySidenav.prototype.init = function init() {
+    SideNav.prototype.init = function init() {
 
     };
 
     /** @access private */
-    JquerySidenav.prototype.addEventListeners = function addEventListeners() {
+    SideNav.prototype.addEventListeners = function addEventListeners() {
 
     };
 
 
     /**
      * @class
-     * @name jQuery.fn.jquery.sidenav
+     * @name jQuery.fn.sidenav
      * @memberOf jQuery.fn
      * @example
- *    $('.jquery.sidenav').jquery.sidenav({
+     *    $('.jquery.sidenav').jquery.sidenav({
      *
      *    });
      *
@@ -47,33 +53,25 @@
      * @param {Object} settings
      * @return {Object} jQuery
      */
-    $.fn.jquery.sidenav  = function (settings) {
+    $.fn.sidenav = function (settings) {
         /**
-         * @memberOf jQuery.fn.jquery.sidenav
-         * @property {Object} options - Settings passed to the function merged with $.fn.jquery.sidenav.defaults
+         * @memberOf jQuery.fn.sidenav
+         * @property {Object} options - Settings passed to the function merged with $.fn.sidenav.defaults
          * @private
          */
-        var options = $.extend(true, {}, $.fn.jquery.sidenav.defaults, settings);
+        var options = $.extend(true, {}, $.fn.sidenav.defaults, settings);
 
-        return this.each(function() {
-            return new JquerySidenav(this, options);
+        return this.each(function () {
+            return new SideNav(this, options);
         });
 
     };
 
     /**
-     * @name jQuery.fn.jquery.sidenav.defaults
-     * @memberOf jQuery.fn.jquery.sidenav
+     * @name jQuery.fn.sidenav.defaults
+     * @memberOf jQuery.fn.sidenav
      * @description Default options
      * @public
      */
-    $.fn.jquery.sidenav.defaults = defaults;
-
-    /**
-     * @name jQuery.fn.jquery.sidenav.JquerySidenav
-     * @memberOf jQuery.fn.jquery.sidenav
-     * @public
-     */
-    $.fn.jquery.sidenav.JquerySidenav = JquerySidenav;
-
-});
+    $.fn.sidenav.defaults = defaults;
+}));

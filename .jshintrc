@@ -91,5 +91,12 @@
         "expect": false,
         "module": false,
         "spyOn": false
-    }
+    },
+
+    // Extra globals.
+    "predef"        : [
+        "require",
+        "define",
+        "escape"
+    ]
 }

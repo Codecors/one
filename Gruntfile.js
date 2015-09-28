@@ -72,7 +72,7 @@ module.exports = function(grunt) {
         watch: {
             karma: {
                 files: ['src/**/*.js', 'test/**/*.js'],
-                tasks: [&#39;less:default&#39;, 'jshint:all', 'karma:unit']
+                tasks: ['less:default', 'jshint:all', 'karma:unit']
             }
         },
 
@@ -105,8 +105,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks(&#39;grunt-contrib-less&#39;);
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('dist', ['clean:dist', 'jshint:all', 'jsdoc', 'copy', 'uglify:dist', &#39;less:dist&#39;]);
+    grunt.registerTask('dist', ['clean:dist', 'jshint:all', 'jsdoc', 'copy', 'uglify:dist', 'less:dist']);
 
 };

@@ -1,14 +1,14 @@
-describe('SPL jQuery jquery.sidenav Plugin', function() {
+describe('SPL jQuery sidenav Plugin', function() {
 
-    var $jquery.sidenav;
+    var $sidenav;
 
     beforeEach(function() {
         /** MAGIc */
     });
 
     it('should be a jQuery plugin', function() {
-        $jquery.sidenav = $('body').jquery.sidenav();
-        expect($jquery.sidenav.jquery).toBeTruthy();
+        $sidenav = $('body').sidenav();
+        expect($sidenav.jquery).toBeTruthy();
     });
 
 });
