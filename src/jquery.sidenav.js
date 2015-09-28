@@ -83,7 +83,7 @@
      * @name jQuery.fn.sidenav
      * @memberOf jQuery.fn
      * @example
-     *    $('.jquery.sidenav').jquery.sidenav({
+     *    $('.sidenav').sidenav({
      *
      *    });
      *
