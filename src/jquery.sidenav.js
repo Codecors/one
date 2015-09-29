@@ -31,6 +31,7 @@
 
     /** @access private */
     SideNav.prototype.init = function init() {
+        var options = this.options;
         this.$el.on('click', 'li a', function (e) {
             //Get the clicked link and the next element
             var $this = $(this);
@@ -39,7 +40,7 @@
             //Check if the next element is a menu and is visible
             if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible'))) {
                 //Close the menu
-                checkElement.slideUp(this.options.animationSpeed, function () {
+                checkElement.slideUp(options.animationSpeed, function () {
                     checkElement.removeClass('menu-open');
                     //Fix the layout in case the sidebar stretches over the height of the window
                     //_this.layout.fix();
@@ -51,14 +52,14 @@
                 //Get the parent menu
                 var parent = $this.parents('ul').first();
                 //Close all open menus within the parent
-                var ul = parent.find('ul:visible').slideUp(this.options.animationSpeed);
+                var ul = parent.find('ul:visible').slideUp(options.animationSpeed);
                 //Remove the menu-open class from the parent
                 ul.removeClass('menu-open');
                 //Get the parent li
                 var parent_li = $this.parent('li');
 
                 //Open the target menu and add the menu-open class
-                checkElement.slideDown(this.options.animationSpeed, function () {
+                checkElement.slideDown(options.animationSpeed, function () {
                     //Add the class active to the parent li
                     checkElement.addClass('menu-open');
                     parent.find('li.active').removeClass('active');
