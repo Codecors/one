@@ -1,6 +1,6 @@
 {
   "name": "jquery.sidenav",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": [
     "dist/jquery.sidenav.min.css",
     "dist/jquery.sidenav.min.js"
